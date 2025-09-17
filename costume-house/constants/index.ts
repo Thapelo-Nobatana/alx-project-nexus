@@ -49,14 +49,14 @@ export const MOBILE_LINKS = [
   },
 ];
 
-import shoeCollection from "@/public/assets/shoe-collection.jpg"
+// import shoeCollection from "@/public/assets/shoe-collection.jpg"
 export const featuredProducts = [
   {
     id: "1",
     name: "Custom Air Max Deluxe",
     price: 299,
     originalPrice: 349,
-    image: shoeCollection,
+    image: "/assets/Nike_2.jpg",
     category: "Sneakers",
     colors: ["#7C3AED", "#F97316", "#FBBF24", "#000000"],
     isNew: true,
@@ -66,7 +66,7 @@ export const featuredProducts = [
     id: "2", 
     name: "Luxury Oxford Custom",
     price: 459,
-    image: shoeCollection,
+    image: "/assets/Nike_4.jpg",
     category: "Dress Shoes",
     colors: ["#000000", "#8B4513", "#654321"],
     isNew: true
@@ -76,7 +76,7 @@ export const featuredProducts = [
     name: "Urban Street Runner",
     price: 189,
     originalPrice: 229,
-    image: shoeCollection,
+    image: "/assets/Nike_8.jpg",
     category: "Sneakers", 
     colors: ["#FFFFFF", "#7C3AED", "#F97316"],
     isSale: true
@@ -85,15 +85,15 @@ export const featuredProducts = [
     id: "4",
     name: "Elegant Evening Heels",
     price: 329,
-    image: shoeCollection,
+    image: "/assets/Nike_8.jpg",
     category: "Heels",
     colors: ["#000000", "#7C3AED", "#FBBF24"]
   }
 ];
 
 export const categories = [
-  { name: "Sneakers", count: "150+ styles", image: shoeCollection },
-  { name: "Dress Shoes", count: "80+ styles", image: shoeCollection },
-  { name: "Boots", count: "65+ styles", image: shoeCollection },
-  { name: "Heels", count: "90+ styles", image: shoeCollection }
+  { name: "Sneakers", count: "150+ styles", image: "/assets/Nike_8.jpg" },
+  { name: "Dress Shoes", count: "80+ styles", image: "/assets/Nike_4.jpg" },
+  { name: "Boots", count: "65+ styles", image: "/assets/Nike_6.jpg" },
+  { name: "Heels", count: "90+ styles", image: "/assets/Nike_2.jpg" }
 ];

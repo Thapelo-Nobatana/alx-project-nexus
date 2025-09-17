@@ -23,9 +23,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
     const [isHovered, setIsHovered] = useState(false);
  return (
     <div 
-      className="bg-[#ffffff] p-6 border border-[#1E293B]/50 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-[#F9FAFB]/20 cursor-pointer group relative"
+      className="bg-[#ffffff] flex flex-col gap-4 rounded-lg border border-[#1E293B]/50 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-[#F9FAFB]/20 cursor-pointer group relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      style={{padding: "6px"}}
     >
       {/* Badges */}
       <div className="absolute top-4 left-4 z-10 flex flex-col space-y-2">
@@ -66,7 +67,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             alt={name}
             width={400}
             height={256}
-            className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-100"
             priority={isNew}
             unoptimized={false}
           />
@@ -75,14 +76,16 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <div className={`absolute inset-0 bg-black/20 transition-opacity duration-300 ${
             isHovered ? 'opacity-100' : 'opacity-0'
           }`}>
-            <div className="absolute bottom-4 left-4 right-4 flex space-x-2">
-              <Button size="sm"  className="flex-1 bg-white/90 text-foreground hover:bg-white">
-                <Eye className="h-4 w-4 mr-2" />
-                Quick View
+            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-center gap-2 space-x-2">
+              <Button size="icon"  className="flex-1 bg-white/90 text-[#000000] items-center hover:bg-white">
+                <Eye className="h-4 w-4 mr-2" color="black" />
+                <div className="text-[#0A0A0B]">
+                  Quick View  
+                </div>
               </Button>
               <Button 
                 size="icon" 
-                className="bg-[#6633B9] hover:bg-[#4D278C] text-white"
+                className="bg-[#F26646] hover:bg-[#4D278C] text-white"
                 onClick={(e) => {
                   e.preventDefault();
                   
@@ -126,13 +129,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </div>
 
         {/* Price */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 gap-2">
           <span className="font-semibold text-lg text-[#0A0A0B]">
-            ${price}
+            R{price}
           </span>
           {originalPrice && originalPrice > price && (
             <span className="text-sm text-[#74747A] line-through">
-              ${originalPrice}
+              R{originalPrice}
             </span>
           )}
         </div>
