@@ -49,27 +49,90 @@ export const MOBILE_LINKS = [
   },
 ];
 
-// import shoeCollection from "@/public/assets/shoe-collection.jpg"
+export const brands = ["All", "Nike", "Adidas", "Custom", "Timberland"];
+export const sizes = [6, 7, 8, 9, 10, 11, 12];
+
+export const colors = [
+  { name: "Black", value: "#000000" },
+  { name: "White", value: "#FFFFFF" },
+  { name: "Purple", value: "#7C3AED" },
+  { name: "Orange", value: "#F97316" },
+  { name: "Gold", value: "#FBBF24" },
+  { name: "Brown", value: "#8B4513" },
+];
+
 export const featuredProducts = [
+  {
+    id: "1",
+    name: "Custom Air Max Deluxe",
+    price: 2990.0,
+    originalPrice: 3490.0,
+    image: "/assets/Nike_2.jpg",
+    category: "Sneakers",
+    colors: ["#7C3AED", "#F97316", "#FBBF24", "#000000"],
+    isNew: true,
+    isSale: true,
+  },
+  {
+    id: "2",
+    name: "Luxury Oxford Custom",
+    price: 4590.0,
+    image: "/assets/Nike_4.jpg",
+    category: "Dress Shoes",
+    colors: ["#000000", "#8B4513", "#654321"],
+    isNew: true,
+  },
+  {
+    id: "3",
+    name: "Urban Street Runner",
+    price: 1890.0,
+    originalPrice: 1229.0,
+    image: "/assets/Nike_8.jpg",
+    category: "Sneakers",
+    colors: ["#FFFFFF", "#7C3AED", "#F97316"],
+    isSale: true,
+  },
+  {
+    id: "4",
+    name: "Elegant Evening Heels",
+    price: 3290.0,
+    image: "/assets/Nike_8.jpg",
+    category: "Heels",
+    colors: ["#000000", "#7C3AED", "#FBBF24"],
+  },
+];
+
+export const categories = [
+  { name: "Sneakers", count: "150+ styles", image: "/assets/Nike_8.jpg" },
+  { name: "Dress Shoes", count: "80+ styles", image: "/assets/Nike_4.jpg" },
+  { name: "Boots", count: "65+ styles", image: "/assets/Nike_6.jpg" },
+  { name: "Heels", count: "90+ styles", image: "/assets/Nike_2.jpg" },
+];
+
+export const allProducts = [
   {
     id: "1",
     name: "Custom Air Max Deluxe",
     price: 299,
     originalPrice: 349,
     image: "/assets/Nike_2.jpg",
-    category: "Sneakers",
+    category: "sneakers",
     colors: ["#7C3AED", "#F97316", "#FBBF24", "#000000"],
     isNew: true,
-    isSale: true
+    isSale: true,
+    size: [8, 9, 10, 11],
+    brand: "Nike",
   },
   {
-    id: "2", 
+    id: "2",
     name: "Luxury Oxford Custom",
     price: 459,
-    image: "/assets/Nike_4.jpg",
-    category: "Dress Shoes",
+    image: "/assets/Nike_8.jpg",
+    category: "dress",
     colors: ["#000000", "#8B4513", "#654321"],
-    isNew: true
+    isNew: true,
+    size: [8, 9, 10, 11, 12],
+    brand: "Custom",
   },
   {
     id: "3",
@@ -77,23 +140,66 @@ export const featuredProducts = [
     price: 189,
     originalPrice: 229,
     image: "/assets/Nike_8.jpg",
-    category: "Sneakers", 
+    category: "sneakers",
     colors: ["#FFFFFF", "#7C3AED", "#F97316"],
-    isSale: true
+    isSale: true,
+    size: [7, 8, 9, 10, 11],
+    brand: "Adidas",
   },
   {
     id: "4",
     name: "Elegant Evening Heels",
     price: 329,
     image: "/assets/Nike_8.jpg",
-    category: "Heels",
-    colors: ["#000000", "#7C3AED", "#FBBF24"]
-  }
+    category: "heels",
+    colors: ["#000000", "#7C3AED", "#FBBF24"],
+    size: [6, 7, 8, 9, 10],
+    brand: "Custom",
+  },
+  {
+    id: "5",
+    name: "Classic Leather Boots",
+    price: 399,
+    image: "/assets/Nike_4.jpg",
+    category: "boots",
+    colors: ["#8B4513", "#000000", "#654321"],
+    size: [8, 9, 10, 11, 12],
+    brand: "Timberland",
+  },
+  {
+    id: "6",
+    name: "Sport Performance Pro",
+    price: 249,
+    originalPrice: 289,
+    image: "/assets/Nike_8.jpg",
+    category: "sneakers",
+    colors: ["#FFFFFF", "#000000", "#7C3AED"],
+    isSale: true,
+    size: [7, 8, 9, 10, 11, 12],
+    brand: "Nike",
+  },
 ];
 
-export const categories = [
-  { name: "Sneakers", count: "150+ styles", image: "/assets/Nike_8.jpg" },
-  { name: "Dress Shoes", count: "80+ styles", image: "/assets/Nike_4.jpg" },
-  { name: "Boots", count: "65+ styles", image: "/assets/Nike_6.jpg" },
-  { name: "Heels", count: "90+ styles", image: "/assets/Nike_2.jpg" }
+export const categoriesProducts = [
+  { id: "all", label: "All Categories", count: allProducts.length },
+  {
+    id: "sneakers",
+    label: "Sneakers",
+    count: allProducts.filter((p) => p.category === "sneakers").length,
+  },
+  {
+    id: "dress",
+    label: "Dress Shoes",
+    count: allProducts.filter((p) => p.category === "dress").length,
+  },
+  {
+    id: "boots",
+    label: "Boots",
+    count: allProducts.filter((p) => p.category === "boots").length,
+  },
+  {
+    id: "heels",
+    label: "Heels",
+    count: allProducts.filter((p) => p.category === "heels").length,
+  },
 ];

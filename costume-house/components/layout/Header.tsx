@@ -1,6 +1,6 @@
+import { ShoppingCart, Search, User } from "lucide-react";
 
- import { ShoppingCart, Search, User } from "lucide-react";
-
+import { MyCart } from "@/context/cartContext";
 import Button from "../common/Button";
 import Link from "next/link";
 import { HEADER_LINKS } from "@/constants";
@@ -11,6 +11,8 @@ import { HiX } from "react-icons/hi";
 import { useState, useRef, useEffect } from "react";
 
 const Header: React.FC = () => {
+  const { cart } = MyCart();
+  const countCart = cart.length;
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -39,10 +41,12 @@ const Header: React.FC = () => {
       <div className="container flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2 gap-2">
           <div className="w-10 h-10 bg-[linear-gradient(135deg,#6633B9,#F26646)] rounded-lg flex items-center justify-center">
-             <span className="text-white font-bold text-xl">CH</span>
+            <span className="text-white font-bold text-xl">CH</span>
           </div>
           <div className="hidden sm:block">
-            <h1 className="font-playfair text-xl md:text-2xl font-bold text-[#0A0A0B]">Costume House</h1>
+            <h1 className="font-playfair text-xl md:text-2xl font-bold text-[#0A0A0B]">
+              Costume House
+            </h1>
             <p className="text-xs text-[#0A0A0B] -mt-1">Gallery</p>
           </div>
         </Link>
@@ -60,20 +64,23 @@ const Header: React.FC = () => {
           </ul>
         </nav>
         <div className="hidden md:flex gap-4 items-center">
-            <Button variant="ghost" size="icon">
-              <Search className="h-5 w-5" />
+          <Button variant="ghost" size="icon">
+            <Search className="h-5 w-5" />
+          </Button>
+          <Button variant="ghost" size="icon">
+            <User className="h-5 w-5" />
+          </Button>
+          <Link href={"/cart"}>
+            <Button variant="ghost" size="icon" className="relative ">
+              <ShoppingCart className="h-5 w-5" />
+              <div
+                className="absolute -top-1 -right-1 bg-[#F26646] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+                style={{ width: "10" }}
+              >
+                {countCart}
+              </div>
             </Button>
-            <Button variant="ghost" size="icon">
-              <User className="h-5 w-5" />
-            </Button>
-            <Link href={"/cart"}>
-              <Button variant="ghost" size="icon" className="relative ">
-                  <ShoppingCart className="h-5 w-5" />
-                      <span className="relative -top-1 -right-1 bg-[#F26646] text-white text-xs rounded-full h-10 w-10 flex items-center " style={{"width": "10"}}>
-                    3
-                   </span>
-              </Button>
-            </Link>
+          </Link>
         </div>
 
         {/* Hamburger menu button */}

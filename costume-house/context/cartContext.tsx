@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 import { CartContextProps } from "@/interfaces";
-import { CartItem } from "@/interfaces"
+import { CartItem } from "@/interfaces";
 const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
@@ -18,19 +18,33 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
+  const updateQuantity = (id: string, newQuantity: number) => {
+    if (newQuantity < 1) return;
+
+    setCart((items) =>
+      items.map((item) =>
+        item.id === id ? { ...item, quantity: newQuantity } : item
+      )
+    );
+  };
+
   const removeFromCart = (id: string) => {
     setCart((prev) => prev.filter((p) => p.id !== id));
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, removeFromCart, updateQuantity }}
+    >
       {children}
     </CartContext.Provider>
   );
 };
 
-export const useCart = () => {
+export const MyCart = () => {
   const ctx = useContext(CartContext);
-  if (!ctx) throw new Error("useCart must be used within CartProvider");
+  if (!ctx) {
+    throw new Error("useCart must be used within CartProvider");
+  }
   return ctx;
 };
