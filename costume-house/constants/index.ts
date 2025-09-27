@@ -203,3 +203,59 @@ export const categoriesProducts = [
     count: allProducts.filter((p) => p.category === "heels").length,
   },
 ];
+
+export const orderItems = [
+  {
+    id: "1",
+    name: "Custom Air Max Deluxe",
+    price: 299,
+    quantity: 1,
+    size: 10,
+    color: "Royal Purple",
+    customText: "JOHN",
+    image: "/assets/Nike_8.jpg",
+  },
+  {
+    id: "2",
+    name: "Urban Street Runner",
+    price: 189,
+    quantity: 2,
+    size: 9,
+    color: "Classic Black",
+    image: "/assets/Nike_8.jpg",
+  },
+];
+
+export const productData = {
+  id: "1",
+  name: "Custom Air Max Deluxe",
+  price: 299,
+  originalPrice: 349,
+  rating: 4.8,
+  reviews: 127,
+  description:
+    "Experience the perfect blend of style and performance with our Custom Air Max Deluxe. Featuring premium materials, advanced cushioning technology, and unlimited customization options.",
+  features: [
+    "Premium leather and textile upper",
+    "Air Max cushioning technology",
+    "Durable rubber outsole",
+    "Custom color options",
+    "Personalized text engraving",
+    "Handcrafted quality",
+  ],
+  images: [
+    "/assets/Nike_8.jpg",
+    "/assets/Nike_8.jpg",
+    "/assets/Nike_8.jpg",
+    "/assets/Nike_8.jpg",
+  ],
+  colors: [
+    { name: "Royal Purple", value: "#7C3AED" },
+    { name: "Vibrant Orange", value: "#F97316" },
+    { name: "Classic Black", value: "#000000" },
+    { name: "Pure White", value: "#FFFFFF" },
+    { name: "Gold Accent", value: "#FBBF24" },
+  ],
+  sizes: [6, 7, 8, 9, 10, 11, 12],
+  patterns: ["Solid", "Gradient", "Geometric", "Abstract", "Custom Upload"],
+};

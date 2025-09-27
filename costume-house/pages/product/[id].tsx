@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useRouter } from "next/router";
 import {
   Heart,
   ShoppingCart,
@@ -22,39 +22,14 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
-import shoeCollection from "@/assets/shoe-collection.jpg";
-
-const productData = {
-  id: "1",
-  name: "Custom Air Max Deluxe",
-  price: 299,
-  originalPrice: 349,
-  rating: 4.8,
-  reviews: 127,
-  description:
-    "Experience the perfect blend of style and performance with our Custom Air Max Deluxe. Featuring premium materials, advanced cushioning technology, and unlimited customization options.",
-  features: [
-    "Premium leather and textile upper",
-    "Air Max cushioning technology",
-    "Durable rubber outsole",
-    "Custom color options",
-    "Personalized text engraving",
-    "Handcrafted quality",
-  ],
-  images: [shoeCollection, shoeCollection, shoeCollection, shoeCollection],
-  colors: [
-    { name: "Royal Purple", value: "#7C3AED" },
-    { name: "Vibrant Orange", value: "#F97316" },
-    { name: "Classic Black", value: "#000000" },
-    { name: "Pure White", value: "#FFFFFF" },
-    { name: "Gold Accent", value: "#FBBF24" },
-  ],
-  sizes: [6, 7, 8, 9, 10, 11, 12],
-  patterns: ["Solid", "Gradient", "Geometric", "Abstract", "Custom Upload"],
-};
+import { productData } from "@/constants";
+import Image from "next/image";
 
 export default function ProductDetail() {
-  const { id } = useParams();
+  const router = useRouter();
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { id } = router.query as { id?: string };
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedColor, setSelectedColor] = useState(productData.colors[0]);
   const [selectedSize, setSelectedSize] = useState<number | null>(null);
@@ -62,6 +37,10 @@ export default function ProductDetail() {
   const [customText, setCustomText] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [isLiked, setIsLiked] = useState(false);
+
+  if (typeof window === "undefined") {
+    return null;
+  }
 
   const handleAddToCart = () => {
     if (!selectedSize) {
@@ -83,9 +62,12 @@ export default function ProductDetail() {
           {/* Product Images */}
           <div className="space-y-4">
             <div className="relative overflow-hidden rounded-2xl bg-muted aspect-square">
-              <img
+              <Image
+                width={100}
+                height={100}
                 src={productData.images[selectedImage]}
                 alt={productData.name}
+                fill
                 className="w-full h-full object-cover"
               />
               <Button
@@ -116,9 +98,12 @@ export default function ProductDetail() {
                       : "border-transparent hover:border-primary/50"
                   }`}
                 >
-                  <img
+                  <Image
                     src={image}
                     alt={`${productData.name} ${index + 1}`}
+                    fill
+                    width={100}
+                    height={100}
                     className="w-full h-full object-cover"
                   />
                 </button>
@@ -235,7 +220,7 @@ export default function ProductDetail() {
 
               {/* Custom Text */}
               <div>
-                <Label className="text-sm font-medium mb-3 block flex items-center">
+                <Label className="text-sm font-medium mb-3 block  items-center">
                   <Type className="h-4 w-4 mr-2" />
                   Custom Text (Optional)
                 </Label>

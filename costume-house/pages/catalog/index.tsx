@@ -34,6 +34,7 @@ export default function Catalog() {
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState("featured");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 500]);
 
   const filteredProducts = allProducts.filter((product) => {
@@ -81,106 +82,112 @@ export default function Catalog() {
   });
 
   const FilterSidebar = () => (
-    <div className="space-y-8">
-      {/* Categories */}
-      <div>
-        <h3 className="font-semibold mb-4">Categories</h3>
-        <div className="space-y-3">
-          {categoriesProducts.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setSelectedCategory(category.id)}
-              className={`flex items-center justify-between w-full p-2 rounded-lg text-left transition-colors ${
-                selectedCategory === category.id
-                  ? "bg-[#6633B9] text-white"
-                  : "hover:bg-[#F5F5F7]"
-              }`}
-            >
-              <span>{category.label}</span>
-              <span className="text-sm opacity-75">({category.count})</span>
-            </button>
-          ))}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <div className="space-y-8">
+        {/* Categories */}
+        <div>
+          <h3 className="font-semibold mb-4">Categories</h3>
+          <div className="space-y-3">
+            {categoriesProducts.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`flex items-center justify-between w-full p-2 rounded-lg text-left transition-colors ${
+                  selectedCategory === category.id
+                    ? "bg-[#6633B9] text-white"
+                    : "hover:bg-[#F5F5F7]"
+                }`}
+              >
+                <span>{category.label}</span>
+                <span className="text-sm opacity-75">({category.count})</span>
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Brands */}
-      <div>
-        <h3 className="font-semibold mb-4" style={{ marginBottom: "4px" }}>
-          Brands
-        </h3>
-        <div className="space-y-2">
-          {brands.map((brand) => (
-            <button
-              key={brand}
-              onClick={() => setSelectedBrand(brand)}
-              className={`block w-full p-2 rounded-lg text-left transition-colors ${
-                selectedBrand === brand
-                  ? "bg-[#6633B9] text-white"
-                  : "hover:bg-[#F5F5F7]"
-              }`}
-            >
-              {brand}
-            </button>
-          ))}
+        {/* Brands */}
+        <div>
+          <h3 className="font-semibold mb-4" style={{ marginBottom: "4px" }}>
+            Brands
+          </h3>
+          <div className="space-y-2">
+            {brands.map((brand) => (
+              <button
+                key={brand}
+                onClick={() => setSelectedBrand(brand)}
+                className={`block w-full p-2 rounded-lg text-left transition-colors ${
+                  selectedBrand === brand
+                    ? "bg-[#6633B9] text-white"
+                    : "hover:bg-[#F5F5F7]"
+                }`}
+              >
+                {brand}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Sizes */}
-      <div>
-        <h3 className="font-semibold mb-4">Sizes</h3>
-        <div className="grid grid-cols-3 gap-2">
-          {sizes.map((size) => (
-            <button
-              key={size}
-              onClick={() => {
-                if (selectedSizes.includes(size)) {
-                  setSelectedSizes(selectedSizes.filter((s) => s !== size));
-                } else {
-                  setSelectedSizes([...selectedSizes, size]);
-                }
-              }}
-              className={`p-2 rounded-lg border text-center transition-colors ${
-                selectedSizes.includes(size)
-                  ? "border-[#6633B9] bg-[#6633B9] text-white"
-                  : "border-[#E6E6EB] hover:border-[#6633B9]"
-              }`}
-            >
-              {size}
-            </button>
-          ))}
+        {/* Sizes */}
+        <div>
+          <h3 className="font-semibold mb-4">Sizes</h3>
+          <div className="grid grid-cols-3 gap-2">
+            {sizes.map((size) => (
+              <button
+                key={size}
+                onClick={() => {
+                  if (selectedSizes.includes(size)) {
+                    setSelectedSizes(selectedSizes.filter((s) => s !== size));
+                  } else {
+                    setSelectedSizes([...selectedSizes, size]);
+                  }
+                }}
+                className={`p-2 rounded-lg border text-center transition-colors ${
+                  selectedSizes.includes(size)
+                    ? "border-[#6633B9] bg-[#6633B9] text-white"
+                    : "border-[#E6E6EB] hover:border-[#6633B9]"
+                }`}
+              >
+                {size}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Colors */}
-      <div>
-        <h3 className="font-semibold mb-4" style={{ marginBottom: "4px" }}>
-          Colors
-        </h3>
-        <div className="grid grid-cols-3 gap-3">
-          {colors.map((color) => (
-            <button
-              key={color.value}
-              onClick={() => {
-                if (selectedColors.includes(color.value)) {
-                  setSelectedColors(
-                    selectedColors.filter((c) => c !== color.value)
-                  );
-                } else {
-                  setSelectedColors([...selectedColors, color.value]);
-                }
-              }}
-              className={`w-10 h-10 rounded-full border-4 transition-all ${
-                selectedColors.includes(color.value)
-                  ? "border-[#6633B9] scale-110"
-                  : "border-gray-200 hover:border-[#6633B9]/50"
-              }`}
-              style={{ backgroundColor: color.value }}
-              title={color.name}
-            />
-          ))}
+        {/* Colors */}
+        <div>
+          <h3 className="font-semibold mb-4" style={{ marginBottom: "4px" }}>
+            Colors
+          </h3>
+          <div className="grid grid-cols-3 gap-3">
+            {colors.map((color) => (
+              <button
+                key={color.value}
+                onClick={() => {
+                  if (selectedColors.includes(color.value)) {
+                    setSelectedColors(
+                      selectedColors.filter((c) => c !== color.value)
+                    );
+                  } else {
+                    setSelectedColors([...selectedColors, color.value]);
+                  }
+                }}
+                className={`w-10 h-10 rounded-full border-4 transition-all ${
+                  selectedColors.includes(color.value)
+                    ? "border-[#6633B9] scale-110"
+                    : "border-gray-200 hover:border-[#6633B9]/50"
+                }`}
+                style={{ backgroundColor: color.value }}
+                title={color.name}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 
   return (
