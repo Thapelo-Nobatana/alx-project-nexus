@@ -5,71 +5,72 @@
 An interactive e-commerce product catalog built with Next.js, TypeScript, Redux Toolkit, and Tailwind CSS.
 Users can seamlessly browse, filter, sort, and explore products with smooth pagination and infinite scrolling.
 
-🔗 Live Demo: [Your Vercel/Netlify Link Here]
-📂 GitHub Repo: https://github.com/yourusername/costume-house
+- 🔗 Live Demo: https://alx-project-nexus-mocha.vercel.app/
+
+- 📂 GitHub Repo: https://github.com/Thapelo-Nobatana/alx-project-nexus/tree/main/costume-house
 
 ## ✨ Features
 
-## Product Discovery Tools
+### Product Discovery Tools
 
-### Category filtering
+Category filtering
 
-### Price sorting (low → high / high → low)
+Price sorting (low → high / high → low)
 
-### Multi-criteria filters
+Multi-criteria filters
 
-### Pagination & Infinite Scroll
+Pagination & Infinite Scroll
 
-### Traditional page navigation
+Traditional page navigation
 
-### Auto-loading new products while scrolling
+Auto-loading new products while scrolling
 
 ## Responsive & Accessible Design
 
-### Works across desktop, tablet, and mobile
+Works across desktop, tablet, and mobile
 
-### Built with Tailwind CSS for a modern look
+Built with Tailwind CSS for a modern look
 
 ## State Management with useState
 
-### Centralized state for products, filters, and UI
+Centralized state for products, filters, and UI
 
-### Predictable and scalable application flow
+Predictable and scalable application flow
 
 ## 🛠️ Tech Stack
 
-### Framework: Next.js (React + TypeScript)
+Framework: Next.js (React + TypeScript)
 
-### State Management: context Toolkit
+State Management: context Toolkit
 
-### Styling: Tailwind CSS
+Styling: Tailwind CSS
 
-### Deployment: Vercel
+Deployment: Vercel
 
-# 🚀 Getting Started
+## 🚀 Getting Started
 
-1. Clone the Repo
-   git clone https://github.com/yourusername/costume-house.git
-   cd costume-house
+- Clone the Repo
+  git clone https://github.com/Thapelo-Nobatana/alx-project-nexus.git
 
-2. Install Dependencies
-   npm install
+  cd costume-house
 
-# or
+- Install Dependencies
+  npm install
 
-yarn install
+or
 
-3. Run the Dev Server
-   npm run dev
+- yarn install
 
-# then open http://localhost:3000
+- Run the Dev Server
+  npm run dev
 
-4. Build for Production
-   npm run build
-   npm start
+then open http://localhost:3000
+
+Build for Production
+npm run build
+npm start
 
 # 🧑‍💻 Author
 
-## 👋 Built by Thapelo Nobatana
-
-### Open to feedback and collaboration!
+👋 Built by Thapelo Nobatana
+Open to feedback and collaboration!
