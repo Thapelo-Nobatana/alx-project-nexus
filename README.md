@@ -1,50 +1,47 @@
 # Project Nexus – Costume House Gallery
 
-## Overview
-**Costume House Gallery** is a dynamic, responsive e-commerce website that allows users to browse, filter, and purchase **customized shoes**. The website emphasizes modern web development practices, including **API integration, responsive design, state management, and advanced UI/UX features**. This project simulates a real-world scenario where developers balance functional requirements with user experience considerations while building a scalable and maintainable application.
+# Costume House 🛍️
 
----
+An interactive e-commerce product catalog built with Next.js, TypeScript, Redux Toolkit, and Tailwind CSS.
+Users can seamlessly browse, filter, sort, and explore products with smooth pagination and infinite scrolling.
 
-## Tech Stack
-- **Frontend Framework:**  Next.js  
-- **State Management:** Redux (Redux Toolkit)  
-- **Language:** TypeScript for type safety  
-- **Styling:** Tailwind CSS (utility-first, responsive design)  
-- **API Integration:** Mock or real backend API for product data  
-- **Deployment:** Vercel / Netlify  
+🔗 Live Demo: [Your Vercel/Netlify Link Here]
+📂 GitHub Repo: https://github.com/yourusername/costume-house
 
----
+## ✨ Features
 
-## Features
-1. **API Data Integration**
-   - Fetch shoe products dynamically from a backend API.
-   - Smooth loading and error handling for better UX.
+## Product Discovery Tools
 
-2. **Product Filtering and Sorting**
-   - Filter shoes by category (sneakers, boots, custom designs).  
-   - Sort by price (low → high, high → low).  
-   - Combine multiple filters for refined product discovery.
+### Category filtering
 
-3. **Pagination and Infinite Scrolling**
-   - Paginated view for efficient product browsing.  
-   - Infinite scrolling option for enhanced usability.
+### Price sorting (low → high / high → low)
 
-4. **Product Customization**
-   - Users can select shoe colors, patterns, and add custom text.
+### Multi-criteria filters
 
-5. **Responsive Design**
-   - Fully responsive layout for desktop, tablet, and mobile.  
-   - Mobile-first approach ensures accessibility.
+### Pagination & Infinite Scroll
 
-6. **Shopping Cart & Checkout**
-   - Add/remove products to cart.  
-   - Checkout page with order summary and mock payment option.
+### Traditional page navigation
 
----
+### Auto-loading new products while scrolling
 
-## Implementation Process
+## Responsive & Accessible Design
 
-### Git Commit Workflow
-- **Initial Setup**
-```bash
-feat: initialize Costume House Gallery project with Next.js, TypeScript, and Tailwind CSS
+### Works across desktop, tablet, and mobile
+
+### Built with Tailwind CSS for a modern look
+
+## State Management with useState
+
+### Centralized state for products, filters, and UI
+
+### Predictable and scalable application flow
+
+## 🛠️ Tech Stack
+
+### Framework: Next.js (React + TypeScript)
+
+### State Management: context Toolkit
+
+### Styling: Tailwind CSS
+
+### Deployment: Vercel
