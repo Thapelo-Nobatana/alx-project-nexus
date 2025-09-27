@@ -45,3 +45,31 @@ Users can seamlessly browse, filter, sort, and explore products with smooth pagi
 ### Styling: Tailwind CSS
 
 ### Deployment: Vercel
+
+# 🚀 Getting Started
+
+1. Clone the Repo
+   git clone https://github.com/yourusername/costume-house.git
+   cd costume-house
+
+2. Install Dependencies
+   npm install
+
+# or
+
+yarn install
+
+3. Run the Dev Server
+   npm run dev
+
+# then open http://localhost:3000
+
+4. Build for Production
+   npm run build
+   npm start
+
+# 🧑‍💻 Author
+
+## 👋 Built by Thapelo Nobatana
+
+### Open to feedback and collaboration!
