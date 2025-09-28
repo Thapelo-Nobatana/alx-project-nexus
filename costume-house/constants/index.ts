@@ -64,7 +64,7 @@ export const colors = [
 export const featuredProducts = [
   {
     id: "1",
-    name: "Custom Air Max Deluxe",
+    name: "Custom Air Force",
     price: 2990.0,
     originalPrice: 3490.0,
     image: "/assets/Nike_2.jpg",
@@ -77,7 +77,7 @@ export const featuredProducts = [
     id: "2",
     name: "Luxury Oxford Custom",
     price: 4590.0,
-    image: "/assets/Nike_4.jpg",
+    image: "/assets/dress_shoes_02.jpeg",
     category: "Dress Shoes",
     colors: ["#000000", "#8B4513", "#654321"],
     isNew: true,
@@ -87,7 +87,7 @@ export const featuredProducts = [
     name: "Urban Street Runner",
     price: 1890.0,
     originalPrice: 1229.0,
-    image: "/assets/Nike_8.jpg",
+    image: "/assets/Nike_4.jpg",
     category: "Sneakers",
     colors: ["#FFFFFF", "#7C3AED", "#F97316"],
     isSale: true,
@@ -96,7 +96,7 @@ export const featuredProducts = [
     id: "4",
     name: "Elegant Evening Heels",
     price: 3290.0,
-    image: "/assets/Nike_8.jpg",
+    image: "/assets/heels_01.jpeg",
     category: "Heels",
     colors: ["#000000", "#7C3AED", "#FBBF24"],
   },
@@ -104,9 +104,13 @@ export const featuredProducts = [
 
 export const categories = [
   { name: "Sneakers", count: "150+ styles", image: "/assets/Nike_8.jpg" },
-  { name: "Dress Shoes", count: "80+ styles", image: "/assets/Nike_4.jpg" },
-  { name: "Boots", count: "65+ styles", image: "/assets/Nike_6.jpg" },
-  { name: "Heels", count: "90+ styles", image: "/assets/Nike_2.jpg" },
+  {
+    name: "Dress Shoes",
+    count: "80+ styles",
+    image: "/assets/dress_shoes_02.jpeg",
+  },
+  { name: "Boots", count: "65+ styles", image: "/assets/Boots_4.jpeg" },
+  { name: "Heels", count: "90+ styles", image: "/assets/heels_02.jpeg" },
 ];
 
 export const allProducts = [
@@ -160,7 +164,7 @@ export const allProducts = [
     id: "5",
     name: "Classic Leather Boots",
     price: 399,
-    image: "/assets/Nike_4.jpg",
+    image: "/assets/Boots_3.jpeg",
     category: "boots",
     colors: ["#8B4513", "#000000", "#654321"],
     size: [8, 9, 10, 11, 12],
